@@ -1,0 +1,33 @@
+.site-header{
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-bottom:1px solid rgba(255,255,255,0.02);
+  position:sticky;
+  top:0;
+  z-index:40;
+  padding: .5rem 0;
+}
+.header-inner, .footer-inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:var(--gap);
+}
+.brand{
+  font-weight:800;
+  letter-spacing:1px;
+  text-decoration:none;
+  color:var(--text);
+  display:inline-flex;
+  align-items:center;
+  gap:.6rem;
+  font-size:1.05rem;
+}
+.main-nav a{ margin-left:.8rem; font-weight:600; color:var(--muted); text-decoration:none }
+.site-footer{
+  margin-top:2.5rem;
+  padding:1.4rem 0;
+  border-top:1px solid rgba(255,255,255,0.02);
+  color:var(--muted);
+}
+.footer-links a{ margin-left:.6rem; color:var(--muted); text-decoration:none }

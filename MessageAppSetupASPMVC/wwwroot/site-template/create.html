@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chat Messages - @ViewBag.Title</title>
+
+    <link rel="stylesheet" href="./css/base.css" />
+    <link rel="stylesheet" href="./css/layout.css" />
+    <link rel="stylesheet" href="./css/messages.css" />
+    <link rel="stylesheet" href="./css/forms.css" />
+    <link rel="stylesheet" href="./css/responsive.css" />
+
+    <meta name="theme-color" content="#0f172a" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="/">✦ ChatApp</a>
+            <nav class="main-nav" aria-label="Main navigation">
+                <a href="/">Home</a>
+                <a href="/Message">Messages</a>
+                <a href="/Message/Create" class="btn btn-primary">New Message</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-section narrow">
+            <div class="section-header">
+                <h1>Create Message</h1>
+                <p class="muted">Write a short message and submit. No authentication — simple demo.</p>
+            </div>
+
+            <form method="post" action="/Message/Create" class="form-card">
+                <!-- In a real app use asp-for and a DTO -->
+                <label class="form-label">Your name
+                    <input name="username" type="text" class="input" placeholder="e.g. Alice" required />
+                </label>
+
+                <label class="form-label">Message
+                    <textarea name="text" class="input input-text" rows="5" placeholder="Write your message"
+                        required></textarea>
+                </label>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Send</button>
+                    <a class="btn btn-ghost" href="/Message">Cancel</a>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <small>© @DateTime.Now.Year — ChatApp — Learning project</small>
+            <nav class="footer-links">
+                <a href="#">Docs</a>
+                <a href="#">Guide</a>
+            </nav>
+        </div>
+    </footer>
+</body>
+
+</html>

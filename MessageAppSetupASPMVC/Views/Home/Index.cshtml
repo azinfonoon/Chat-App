@@ -1,0 +1,146 @@
+﻿
+
+<section class="page-section">
+    <div class="section-header">
+        <h1>Messages</h1>
+        <p class="muted">Simple list of messages. Edited messages show an "edited" badge.</p>
+    </div>
+
+    <div class="controls-row">
+        <a href="/Message/Create" class="btn btn-primary">Create Message</a>
+    </div>
+
+    <ul class="message-list">
+        <!-- Unpinned message -->
+        <li class="message-item">
+            <form method="post" action="/Message/Pin/1" class="pin-icon-form">
+                <button type="submit" class="pin-icon-btn" title="Pin message">📌</button>
+            </form>
+            <div class="message-body">
+                <div class="message-meta">
+                    <span class="author">Alice</span>
+                    <span class="dot">•</span>
+                    <time datetime="2025-11-10">Nov 10, 2025</time>
+                </div>
+                <p class="message-text">Welcome to the chat app! This is an unpinned message.</p>
+            </div>
+            <div class="message-actions">
+                <a class="link" href="/Message/Edit/1">Edit</a>
+                <form method="post" action="/Message/Delete/1" class="delete-form">
+                    <button type="submit" class="btn-delete">Delete</button>
+                </form>
+            </div>
+        </li>
+
+        <!-- Pinned message -->
+        <li class="message-item pinned">
+            <form method="post" action="/Message/Unpin/2" class="pin-icon-form">
+                <button type="submit" class="pin-icon-btn pinned" title="Unpin message">📌</button>
+            </form>
+            <div class="message-body">
+                <div class="message-meta">
+                    <span class="author">Instructor</span>
+                    <span class="dot">•</span>
+                    <time datetime="2025-11-05">Nov 5, 2025</time>
+                    <span class="badge pin">pinned</span>
+                </div>
+                <p class="message-text">
+                    Remember: commit one feature per branch. Keep commits small and
+                    descriptive.
+                </p>
+            </div>
+            <div class="message-actions">
+                <a class="link" href="/Message/Edit/2">Edit</a>
+                <form method="post" action="/Message/Delete/2" class="delete-form">
+                    <button type="submit" class="btn-delete">Delete</button>
+                </form>
+            </div>
+        </li>
+
+        <!-- Additional mock messages -->
+        <li class="message-item">
+            <form method="post" action="/Message/Pin/3" class="pin-icon-form">
+                <button type="submit" class="pin-icon-btn" title="Pin message">📌</button>
+            </form>
+            <div class="message-body">
+                <div class="message-meta">
+                    <span class="author">Bob</span>
+                    <span class="dot">•</span>
+                    <time datetime="2025-11-09">Nov 9, 2025</time>
+                    <span class="badge edited">edited</span>
+                </div>
+                <p class="message-text">This is a demo message that has been edited.</p>
+            </div>
+            <div class="message-actions">
+                <a class="link" href="/Message/Edit/3">Edit</a>
+                <form method="post" action="/Message/Delete/3" class="delete-form">
+                    <button type="submit" class="btn-delete">Delete</button>
+                </form>
+            </div>
+        </li>
+
+        <li class="message-item">
+            <form method="post" action="/Message/Pin/4" class="pin-icon-form">
+                <button type="submit" class="pin-icon-btn" title="Pin message">📌</button>
+            </form>
+            <div class="message-body">
+                <div class="message-meta">
+                    <span class="author">Charlie</span>
+                    <span class="dot">•</span>
+                    <time datetime="2025-11-08">Nov 8, 2025</time>
+                </div>
+                <p class="message-text">Here’s another message to fill out the chat list. Static demo only.</p>
+            </div>
+            <div class="message-actions">
+                <a class="link" href="/Message/Edit/4">Edit</a>
+                <form method="post" action="/Message/Delete/4" class="delete-form">
+                    <button type="submit" class="btn-delete">Delete</button>
+                </form>
+            </div>
+        </li>
+
+        <li class="message-item pinned">
+            <form method="post" action="/Message/Unpin/5" class="pin-icon-form">
+                <button type="submit" class="pin-icon-btn pinned" title="Unpin message">📌</button>
+            </form>
+            <div class="message-body">
+                <div class="message-meta">
+                    <span class="author">Admin</span>
+                    <span class="dot">•</span>
+                    <time datetime="2025-11-06">Nov 6, 2025</time>
+                    <span class="badge pin">pinned</span>
+                </div>
+                <p class="message-text">Pinned message to demonstrate multiple pinned items at the top.</p>
+            </div>
+            <div class="message-actions">
+                <a class="link" href="/Message/Edit/5">Edit</a>
+                <form method="post" action="/Message/Delete/5" class="delete-form">
+                    <button type="submit" class="btn-delete">Delete</button>
+                </form>
+            </div>
+        </li>
+
+        <li class="message-item">
+            <form method="post" action="/Message/Pin/6" class="pin-icon-form">
+                <button type="submit" class="pin-icon-btn" title="Pin message">📌</button>
+            </form>
+            <div class="message-body">
+                <div class="message-meta">
+                    <span class="author">Dana</span>
+                    <span class="dot">•</span>
+                    <time datetime="2025-11-04">Nov 4, 2025</time>
+                </div>
+                <p class="message-text">
+                    Testing multiple messages to see scrolling and layout behavior in chat
+                    UI.
+                </p>
+            </div>
+            <div class="message-actions">
+                <a class="link" href="/Message/Edit/6">Edit</a>
+                <form method="post" action="/Message/Delete/6" class="delete-form">
+                    <button type="submit" class="btn-delete">Delete</button>
+                </form>
+            </div>
+        </li>
+    </ul>
+</section>

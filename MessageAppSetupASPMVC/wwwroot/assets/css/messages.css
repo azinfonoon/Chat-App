@@ -1,0 +1,202 @@
+:root {
+  --radius: 1rem;
+  --accent: #6ee7b7;
+  --accent-2: #60a5fa;
+  --text: #f1f1f1;
+  --muted: rgba(255, 255, 255, 0.6);
+  --glass: rgba(255,255,255,0.05);
+}
+
+/* =================
+   MESSAGE LIST
+   ================= */
+.message-list {
+  list-style: none;
+  margin: 1rem 0 3rem 0;
+  padding: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+/* =================
+   MESSAGE ITEM
+   ================= */
+.message-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius);
+  border: 1px solid rgba(255,255,255,0.02);
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6), inset 0 1px rgba(255,255,255,0.01);
+  transition: transform 0.2s, background 0.2s;
+}
+
+.message-item:hover {
+  background: rgba(255,255,255,0.1);
+  transform: translateY(-2px);
+}
+
+.message-item.pinned {
+  border-left: 4px solid var(--accent);
+  background: rgba(110,231,183,0.06);
+}
+
+/* =================
+   MESSAGE BODY
+   ================= */
+.message-body {
+  flex: 1;
+}
+
+.message-meta {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-bottom: 0.45rem;
+}
+
+.author {
+  font-weight: 700;
+  color: var(--text);
+}
+
+.dot {
+  opacity: 0.5;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: rgba(255,255,255,0.02);
+  color: var(--muted);
+}
+
+.badge.edited {
+  background: linear-gradient(90deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  color: var(--accent-2);
+  border: 1px solid rgba(96,165,250,0.12);
+}
+
+.badge.pin {
+  background: linear-gradient(90deg, rgba(110,231,183,0.06), rgba(96,165,250,0.06));
+  color: var(--accent);
+}
+
+.message-text {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+/* =================
+   ACTIONS
+   ================= */
+.message-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.message-actions .link {
+  font-size: 0.9rem;
+  color: var(--accent-2);
+  text-decoration: none;
+}
+
+.message-actions .link:hover {
+  text-decoration: underline;
+}
+
+/* =================
+   DELETE BUTTON
+   ================= */
+.delete-form {
+  display: inline-block;
+}
+
+.btn-delete {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.15);
+  color: rgb(239, 68, 68);
+  font-size: 0.85rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-delete:hover {
+  background: rgba(239, 68, 68, 0.2);
+  transform: scale(1.05);
+}
+
+/* =================
+   PIN ICON
+   ================= */
+.pin-icon-form {
+  position: absolute;
+  top: 0.6rem;
+  right: 0.8rem;
+}
+
+.pin-icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0;
+  transition: opacity 0.2s, transform 0.2s;
+  color: rgba(255,255,255,0.6);
+}
+
+.message-item:hover .pin-icon-btn {
+  opacity: 1;
+}
+
+.pin-icon-btn:hover {
+  color: #facc15;
+  transform: scale(1.2);
+}
+
+/* Always visible for pinned */
+.pin-icon-btn.pinned {
+  opacity: 1;
+  color: #facc15;
+}
+
+/* =================
+   RESPONSIVE
+   ================= */
+@media (max-width: 640px) {
+  .message-item {
+    padding: 0.8rem 1rem;
+  }
+
+  .pin-icon-btn {
+    font-size: 1.1rem;
+    top: 0.4rem;
+    right: 0.6rem;
+  }
+
+  .message-text {
+    font-size: 0.95rem;
+  }
+
+  .message-actions {
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: flex-start;
+  }
+}
+
+

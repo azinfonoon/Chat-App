@@ -1,0 +1,33 @@
+.form-card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding:1rem;
+  border:1px solid rgba(255,255,255,0.02);
+  max-width:720px;
+  margin-block-start: 2rem;
+}
+.form-label{
+  display:block;
+  margin-bottom:.75rem;
+  font-weight:600;
+  color:var(--muted);
+}
+.input{
+  display:block;
+  width:100%;
+  padding:.65rem .8rem;
+  margin-top:.3rem;
+  border-radius:10px;
+  border:1px solid rgba(255,255,255,0.03);
+  background:transparent;
+  color:var(--text);
+  font-size:1rem;
+}
+.input-text{ min-height:120px; resize:vertical; }
+
+.form-actions{
+  display:flex;
+  gap:.6rem;
+  justify-content:flex-end;
+  margin-top:1rem;
+}
