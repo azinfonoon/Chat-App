@@ -1,0 +1,74 @@
+﻿
+@model List<Message>
+
+<section class="page-section">
+    <div class="section-header">
+        <h1>Messages</h1>
+        <p class="muted">Simple list of messages. Edited messages show an "edited" badge.</p>
+    </div>
+
+    <div class="controls-row">
+        <a asp-controller="Message" asp-action="Create" class="btn btn-primary">Create Message</a>
+    </div>
+
+    <ul class="message-list">
+
+
+
+        <!-- Pinned message -->
+        @*  <li class="message-item pinned">
+            <form method="post" action="/Message/Unpin/2" class="pin-icon-form">
+                <button type="submit" class="pin-icon-btn pinned" title="Unpin message">📌</button>
+            </form>
+            <div class="message-body">
+                <div class="message-meta">
+                    <span class="author">Instructor</span>
+                    <span class="dot">•</span>
+                    <time datetime="2025-11-05">Nov 5, 2025</time>
+                    <span class="badge pin">pinned</span>
+                </div>
+                <p class="message-text">
+                    Remember: commit one feature per branch. Keep commits small and
+                    descriptive.
+                </p>
+            </div>
+            <div class="message-actions">
+                <a class="link" href="/Message/Edit/2">Edit</a>
+                <form method="post" action="/Message/Delete/2" class="delete-form">
+                    <button type="submit" class="btn-delete">Delete</button>
+                </form>
+            </div>
+        </li> *@
+
+        <!-- Additional mock messages -->
+        @foreach(var item in Model)
+        {
+
+            <li class="message-item">
+                <form method="post" action="/Message/Pin/3" class="pin-icon-form">
+                    <button type="submit" class="pin-icon-btn" title="Pin message">📌</button>
+                </form>
+                <div class="message-body">
+                    <div class="message-meta">
+                        <span class="author">@item.UserName</span>
+                        <span class="dot">•</span>
+                        <time datetime="2025-11-09">@item.Date</time>
+                        @if(item.IsEdited)
+                        {
+                            <span class="badge edited">edited</span>
+                        }
+                    </div>
+                    <p class="message-text">@item.Text</p>
+                </div>
+                <div class="message-actions">
+                    <a class="link" asp-controller="Message" asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                    <form method="post"asp-controller="Message" asp-action="Delete" asp-route-id="@item.Id" class="delete-form">
+                        <button type="submit" class="btn-delete">Delete</button>
+                    </form>
+                </div>
+            </li>
+        }
+       
+
+    </ul>
+</section>
