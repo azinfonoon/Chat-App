@@ -1,0 +1,26 @@
+﻿@model CreateModelDto
+<section class="page-section narrow">
+    <div class="section-header">
+        <h1>Create Message</h1>
+        <p class="muted">Write a short message and submit. No authentication — simple demo.</p>
+    </div>
+
+    <form method="post" asp-controller="Message" asp-action="Create" class="form-card">
+        <!-- In a real app use asp-for and a DTO -->
+        <label class="form-label">
+            Your name
+            <input name="username" type="text" class="input" placeholder="e.g. Alice" required />
+        </label>
+
+        <label class="form-label">
+            Message
+            <textarea name="text" class="input input-text" rows="5" placeholder="Write your message"
+                      required></textarea>
+        </label>
+
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Send</button>
+            <a class="btn btn-ghost" asp-action="index">Cancel</a>
+        </div>
+    </form>
+</section>

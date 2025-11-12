@@ -7,5 +7,7 @@
         public bool IsEdited { get; set; }
         public DateTime Date { get; set; }
         public string UserName { get; set; }
+
+       
     }
 }
