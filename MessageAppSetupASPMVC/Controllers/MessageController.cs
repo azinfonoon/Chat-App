@@ -45,5 +45,43 @@ namespace MessageAppSetupASPMVC.Controllers
             return RedirectToAction("Index");
 
         }
+        public IActionResult Edit(Guid id)
+        {
+           
+
+
+            var message = _context.Messages.FirstOrDefault(x => x.Id==id);
+
+            EditModelDto editModelDto = new EditModelDto()
+            {
+              Id=message.Id,
+
+                Text =message.Text,
+                UserName =message.UserName,
+
+
+            };
+            if (message == null) return NotFound();
+            return View(editModelDto);
+        }
+        [HttpPost]
+        public IActionResult Edit(Guid id, EditModelDto editModelDto)
+
+        {
+            if (!ModelState.IsValid)
+            {
+                return NotFound();
+            }
+           
+            var message= _context.Messages.FirstOrDefault(x => x.Id == id);
+            if (message== null) return NotFound();
+
+           message.Text = editModelDto.Text;
+            message.Date = DateTime.Now;
+            message.IsEdited = true;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+
+        }
     }
 }
