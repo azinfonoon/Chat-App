@@ -20,9 +20,9 @@
         <div class="container header-inner">
             <a class="brand" href="/">✦ ChatApp</a>
             <nav class="main-nav" aria-label="Main navigation">
-                <a href="/">Home</a>
-                <a href="/Message">Messages</a>
-                <a href="/Message/Create" class="btn btn-primary">New Message</a>
+                <a asp-controller="Home" asp-action="Index">Home</a>
+                <a asp-controller="Message" asp-action="Index">Messages</a>
+                <a asp-controller="Message" asp-action="Create" class="btn btn-primary">New Message</a>
             </nav>
         </div>
     </header>
